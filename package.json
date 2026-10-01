@@ -1,22 +1,17 @@
 {
-  "name": "serverless-decentrilzed-message-app",
-  "version": "1.0.0",
-  "main": "index.ts",
-  "dependencies": {
-    "expo": "~57.0.26",
-    "expo-status-bar": "~57.0.1",
-    "react": "19.2.3",
-    "react-native": "0.86.3"
-  },
-  "devDependencies": {
-    "@types/react": "~19.2.2",
-    "typescript": "~6.0.3"
-  },
+  "name": "murmur",
+  "version": "0.1.0",
+  "description": "Serverless decentralized group chat. Every device is the server and the database.",
+  "type": "module",
+  "bin": { "murmur": "src/cli.js" },
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web"
+    "start": "node src/cli.js",
+    "alice": "node src/cli.js --name alice --port 4001 --data data/alice",
+    "bob": "node src/cli.js --name bob --port 4002 --data data/bob",
+    "carol": "node src/cli.js --name carol --port 4003 --data data/carol",
+    "test": "node test/scenario.js"
   },
-  "private": true
+  "license": "MIT",
+  "dependencies": { "hyperswarm": "^4.8.0" },
+  "devDependencies": { "hyperdht": "^6.0.0" }
 }
